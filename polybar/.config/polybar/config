@@ -1,0 +1,194 @@
+;==========================================================
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;==========================================================
+
+[colors]
+background = #000000
+foreground = #dfdfdf
+foreground-alt = #696969
+
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+
+
+[bar/mybar]
+width = 100%
+height = 21
+radius = 0
+fixed-center = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 6
+
+module-margin-left = 0
+module-margin-right = 4
+
+font-0 = fixed:pixelsize=10;1
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = siji:pixelsize=10;1
+font-3 = 3270SemiNarrow Nerd Font:pixelsize=9;2
+font-4 = Source Han Sans JP:size=8:antialias=true;1
+
+modules-left = bspwm 
+modules-right = system-usb-udev easteregg-pornhub memory cpu pulseaudio date powermenu  
+
+tray-position = right
+tray-padding = 5
+tray-margin-left = -6
+tray-background = ${colors.secondary}
+
+wm-restack = bspwm
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+
+[module/bspwm]
+type = internal/bspwm
+pin-workspaces = false
+
+ws-icon-0 = ナナ;
+ws-icon-1 = ウェブ;
+ws-icon-2 = コード;ﲵ
+ws-icon-3 = ロロ;ﭮ
+ws-icon-4 = アンキ;
+#ws-icon-5 = ゲーム;
+#ws-icon-6 = ヤ;
+
+label-focused = %icon%    %name%
+label-focused-underline= ${colors.secondary}
+label-focused-padding = 3
+
+label-occupied = %icon%    %name%
+label-occupied-padding = 3
+
+label-urgent = %icon%    %name%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 3
+
+label-empty = %icon%    %name%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 3
+
+
+[module/date]
+type = internal/date
+date-margin = 4
+date = %%{F#e60053}羽  %%{F#fff}%I:%M%%{F-} %p  
+date-alt =%%{F#e60053}羽  %%{F#fff}%I:%M%%{F#666}:%%{F#e60053}%S %%{F#fff}%p | %%{F#fff}%A, %d %B %Y    
+
+
+[module/easteregg-pornhub]
+type = custom/script
+exec = echo " hub "
+interval = 3600
+click-left = "qutebrowser https://www.github.com" 
+
+format = <label>
+format-prefix = "Code "
+format-prefix-foreground = #ffffff
+format-prefix-background = #000000 
+
+format-overline = #000000
+format-underline = #000000
+format-foreground = #000000
+format-background = #ffa500
+
+format-suffix = ""
+format-suffix-background = #000000
+format-suffix-foreground = #ffffff
+
+
+[module/pulseaudio]
+type = internal/pulseaudio
+expand-right = false
+
+format-volume = <label-volume>
+label-volume =%{F#e60053}墳   %{F#FFFFFF}%percentage%%  
+label-volume-foreground = ${root.foreground}
+
+label-muted =    
+label-muted-foreground = #666
+
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = "%{F#e60053}ﱨ  "
+format-prefix-foreground = ${colors.foreground-alt}
+label = %percentage:2%% 
+
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = "%{F#e60053}ﲭ  "
+format-prefix-foreground = ${colors.foreground-alt}
+label = %percentage_used%% 
+
+
+[module/system-usb-udev]
+type = custom/script
+exec = /home/re-nanashi/.config/polybar/scripts/system-usb-udev.sh
+tail = true
+click-left = /home/re-nanashi/.config/polybar/scripts/system-usb-udev.sh --mount &
+click-right = /home/re-nanashi/.config/polybar/scripts/system-usb-udev.sh --unmount &
+
+
+[module/powermenu]
+type = custom/menu
+expand-right = true
+format-spacing = 1
+
+label-open = ⭘ 
+label-open-foreground = ${colors.secondary}
+label-close = ⭘      cancel
+label-close-foreground = ${colors.secondary}
+label-separator = |
+label-separator-foreground = ${colors.foreground-alt}
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
+
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = sudo reboot
+
+menu-2-0 = power off
+menu-2-0-exec = sudo poweroff
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0
+
+
+[settings]
+screenchange-reload = true
+pseudo-transparency = true
+
+
+[global/wm]
+margin-top = 0
+margin-bottom = -10
+
+
+[module/earthquake]
+include-file = ~/.config/polybar/scripts/earthquake/module.conf

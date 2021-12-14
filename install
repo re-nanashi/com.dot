@@ -1,0 +1,8 @@
+#!/usr/bin/zsh
+
+pushd $DOT
+for folder in $(echo $STOW_FOLDERS | sed "s/,/ /g")
+do
+    stow --restow $folder
+done
+popd
