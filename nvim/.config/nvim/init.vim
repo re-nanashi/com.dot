@@ -32,4 +32,4 @@ source $HOME/.config/nvim/vimspector.vim
 source $HOME/.config/nvim/status.vim
 source $HOME/.config/nvim/terminal_theme.vim
 source $HOME/.config/nvim/telescope.vim
-source $HOME/.config/nvim/colorscript.vim
+source $HOME/.config/nvim/colorscript_0.vim

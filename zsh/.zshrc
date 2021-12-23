@@ -9,15 +9,17 @@ ZSH_THEME="evan" #lambda
 source $ZSH/oh-my-zsh.sh
 
 # PLUGINS
-plugins=(git)
+plugins=(git, zsh-autosuggestions)
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
 
 # POKEMON LOADER
-KITTY_INSTANCES=$(bspc query -N -d $somedesktop -n .window.\!hidden | wc -l)
-pokemon_list=('darkrai' 'absol')
-if [ $KITTY_INSTANCES -le 1 ]; then
-    random=$((1 + $RANDOM % 2))
-    pokemon-colorscripts -n ${pokemon_list[$random]}
-fi
+#KITTY_INSTANCES=$(bspc query -N -d $somedesktop -n .window.\!hidden | wc -l)
+#pokemon_list=('darkrai' 'absol')
+#if [ $KITTY_INSTANCES -le 1 ]; then
+#    random=$((1 + $RANDOM % 2))
+#    pokemon-colorscripts -n ${pokemon_list[$random]}
+#fi
 
 ### ALIAS CONFIGS
 alias eba='zsh'
@@ -58,12 +60,14 @@ alias la='ls -a'
 alias ll='ls -la'
 
 #DIRECTORIES
+alias dot='cd $HOME/.dotfiles'
 alias dl='cd $HOME/Downloads'
 alias doc='cd $HOME/Documents'
 alias sc='cd $HOME/Documents/Screenshots'
 alias n='nnn -d -e'
 alias sales='nvim $HOME/Documents/Personal_Dev/notes.txt'
 alias pd='vi $HOME/Documents/Personal_Dev'
+alias usb='cd /mnt/usb/'
 
 #MISC
 alias tsk='bpytop'

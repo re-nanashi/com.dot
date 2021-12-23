@@ -56,6 +56,8 @@ settings:
     https://meet.google.com: true
   content.geolocation:
     https://www.coursef.com: false
+  content.media.audio_capture:
+    https://www.kumospace.com: true
   content.media.audio_video_capture:
     https://meet.google.com: true
   content.notifications.enabled:

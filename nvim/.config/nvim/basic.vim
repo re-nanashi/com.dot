@@ -14,15 +14,16 @@ set expandtab
 set smartindent
 set clipboard+=unnamedplus
 set lazyredraw
+set guicursor=
 set nocompatible		
 syntax on
 
 "COLOR THEME
 set termguicolors
-"colorscheme ghdark
+"colorscheme darkblue
 
 "TRANSPARENCY CONFIG
-hi! Normal ctermbg=NONE guibg=NONE
+"hi! Normal ctermbg=NONE guibg=NONE
 
 "CPP HIGHLIGHT
 let g:cpp_class_scope_highlight = 1
