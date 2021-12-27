@@ -18,7 +18,7 @@ hi Identifier   term=underline	cterm=bold			ctermfg=Cyan    guifg=#40ffff
 hi Statement    term=bold		ctermfg=Yellow      gui=bold	    guifg=#aa4444
 hi PreProc	    term=underline	ctermfg=LightBlue	guifg=#ff80ff
 hi Type	        term=underline	guifg=#75E6DA       gui=bold
-hi Function	    term=bold		ctermfg=White       guifg=White
+hi Function	    term=bold		ctermfg=White       guifg=white
 hi Repeat	    term=underline	ctermfg=White		guifg=white
 hi Operator	    ctermfg=Red		guifg=Red
 hi Ignore	    ctermfg=black	guifg=bg
@@ -31,6 +31,7 @@ hi LineNr	    term=bold       guifg=#5e5e5e
 hi Search	    guifg=#171717   guibg=DarkCyan
 hi SignColumn   guifg=NONE      guibg=Black
 hi Folded       guibg=#5e5e5e
+hi ModeMsg		guifg=Magenta
 
 
 

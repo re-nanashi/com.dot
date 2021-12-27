@@ -10,7 +10,6 @@ Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'puremourning/vimspector'
 Plug 'szw/vim-maximizer'
 Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'mg979/vim-xtabline'
 Plug 'zhou13/vim-easyescape'
 Plug 'wlangstroth/vim-racket'
 Plug 'Olical/conjure', {'tag': 'v4.23.0'}
@@ -22,7 +21,6 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'Konfekt/FastFold' 
 Plug 'romainl/vim-cool'
-
 call plug#end()
 
 source $HOME/.config/nvim/basic.vim
@@ -32,4 +30,4 @@ source $HOME/.config/nvim/vimspector.vim
 source $HOME/.config/nvim/status.vim
 source $HOME/.config/nvim/terminal_theme.vim
 source $HOME/.config/nvim/telescope.vim
-source $HOME/.config/nvim/colorscript_0.vim
+source $HOME/.config/nvim/colorscript.vim

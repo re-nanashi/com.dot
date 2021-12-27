@@ -51,11 +51,3 @@ set statusline=%2*%{Mode()}%3*\ ⮀\ \ %t%1*%=%{StatusDiagnostic()}%{&enc}\ ⮃\
 "set statusline+=,%6*%{&mod?'+':''}%1*%{&mod?'':'-'}                                                                                                                                                    
 set statusline+=%{&ro?',':''}%6*%{&ro?'⭤':''}%1*]\ [⭡\ %03l:%4*%03v%1*]
 let g:NERDTreeStatusline = '%#NonText#'
-
-" TAB LINE
-let g:xtabline_settings = get(g:, 'xtabline_settings', {})
-let g:xtabline_settings = {
-            \ 'theme':                    'paramount',
-            \ 'tabline_modes':            ['buffers', 'tabs'],
-            \}
-let g:xtabline_lazy = 1
