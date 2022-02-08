@@ -20,7 +20,11 @@ syntax on
 
 "COLOR THEME
 set termguicolors
-"colorscheme darkblue
+set colorcolumn=85
+"highlight ColorColumn ctermbg=0 guibg=lightgrey 
+
+"colorscheme gruvbox
+"set background=dark 
 
 "TRANSPARENCY CONFIG
 "hi! Normal ctermbg=NONE guibg=NONE
@@ -28,7 +32,6 @@ set termguicolors
 "CPP HIGHLIGHT
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
-
 
 "MISC
 

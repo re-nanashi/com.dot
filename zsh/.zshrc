@@ -1,7 +1,7 @@
 # PATH
 # Path to oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export PATH=$PATH:$HOME/.local/bin:/home/.npm-global/bin/
+export PATH=$PATH:$HOME/.local/bin:/home/.npm-global/bin/:$HOME/.local/share/gem/ruby/3.0.0/bin
 export DOT="$HOME/.dotfiles"
 
 #ZSH_THEME

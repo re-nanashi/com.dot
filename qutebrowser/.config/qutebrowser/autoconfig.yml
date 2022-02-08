@@ -57,6 +57,7 @@ settings:
   content.geolocation:
     https://www.coursef.com: false
   content.media.audio_capture:
+    https://online-voice-recorder.com: true
     https://www.kumospace.com: true
   content.media.audio_video_capture:
     https://meet.google.com: true
@@ -86,9 +87,15 @@ settings:
     global: bottom
   downloads.prevent_mixed_content:
     global: true
+  fonts.default_size:
+    global: 10pt
   scrolling.smooth:
+    global: true
+  tabs.background:
     global: true
   url.searchengines:
     global:
       DEFAULT: https://google.com/search?q={}
       yt: https://youtube.com/results?search_query={}
+  zoom.default:
+    global: 100%

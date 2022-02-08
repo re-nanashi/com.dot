@@ -17,7 +17,7 @@ super + F2
 	flameshot full -c -p ~/Documents/Screenshots
 
 # record
-super + F3
+super + {_,shift + }a 
 	/home/re-nanashi/.audio-clipb/run.sh
 
 # windows browser emulator

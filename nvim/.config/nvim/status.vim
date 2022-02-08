@@ -25,13 +25,9 @@ function! Mode()
     endif                                                                                                                                                                                                
 endfunc                                                                                                                                                                                                
 
-hi link User2 Statusline                                                                                                                                                                               
+hi link User1 Statusline                                                                                                                                                                               
 hi Statusline cterm=NONE                                                                                                                                                                               
-"hi User1 guibg=#000000 ctermfg=231 ctermbg=236 cterm=bold                                                                                                                                                            
-hi User2 guibg=NONE ctermfg=28  ctermbg=22  cterm=bold
-"hi User3 guibg=#000000 ctermfg=28  ctermbg=22  cterm=bold
-"hi User4 guibg=#000000 ctermfg=28  ctermbg=22  cterm=bold
-"hi User5 guibg=#000000 ctermfg=28  ctermbg=22  cterm=bold
+hi User1 guibg=NONE ctermfg=28  ctermbg=22  cterm=bold
 
 function! StatusDiagnostic() abort
     let info = get(b:, 'coc_diagnostic_info', {})

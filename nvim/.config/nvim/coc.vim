@@ -1,5 +1,8 @@
 let g:cursorhold_updatetime = 100
 
+"Ruby
+let g:coc_global_extensions = ['coc-solargraph']
+
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim
 set encoding=utf-8
