@@ -15,6 +15,7 @@
 background = #000000
 foreground = #dfdfdf
 foreground-alt = #696969
+icon_bg = #2F2F2F
 
 primary = #ffb52a
 secondary = #e60053
@@ -36,24 +37,24 @@ line-color = #f00
 border-size = 0
 border-color = #00000000
 
-padding-left = 0
-padding-right = 6
+padding-left = 2
+padding-right = 4
 
 module-margin-left = 0
 module-margin-right = 4
 
-font-0 = fixed:pixelsize=10;2
+font-0 = fixed:pixelsize=10;3
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;1
 font-2 = siji:pixelsize=10;1
-font-3 = 3270SemiNarrow Nerd Font:pixelsize=9;2
+font-3 = 3270SemiNarrow Nerd Font Mono:pixelsize=16.5;5
 
-modules-left = logo bspwm xwindow 
-modules-right = memory cpu pulseaudio date powermenu  
+modules-left = bspwm 
+modules-right = cpu pulseaudio date powermenu  
 
 tray-position = right
 tray-padding = 5
 tray-margin-left = -6
-tray-background = ${colors.secondary}
+tray-background = ${colors.icon_bg}
 
 wm-restack = bspwm
 
@@ -64,48 +65,47 @@ cursor-scroll = ns-resize
 [module/logo]
 type = custom/text
 content-padding = 1
-content = " "
+content = "  "
 
 
 [module/bspwm]
 type = internal/bspwm
 
-ws-icon-0 = 1;ﲵ 
-ws-icon-1 = 2; 
-ws-icon-2 = 3;
-ws-icon-3 = 4;ﭮ
+ws-icon-0 = 1;
+ws-icon-1 = 2;ﲵ 
+ws-icon-2 = 3;﬏ 
+ws-icon-3 = 4;
 ws-icon-4 = 5;
-#ws-icon-5 = 6;
+#ws-icon-5 = 6;ﭮ
 #ws-icon-6 = 7;
 
-label-focused = "■ %icon%  "
-label-focused-underline = ${colors.secondary}
+
+label-focused = "%icon%"
+label-focused-background = ${colors.icon_bg}
+label-focused-foreground = ${colors.secondary}
 label-focused-padding = 2
 
-label-occupied = "■ %icon%  "
+label-occupied = "%icon%"
+label-occupied-foreground = ${colors.secondary}
 label-occupied-padding = 2
 
-label-urgent = "□ %icon%  "
+label-urgent = "%icon%"
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
-label-empty = "□ %icon%  "
+label-empty = "%icon%"
 label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = 2
 
-
 [module/xwindow]
 type = internal/xwindow
-label =      %title:0:50:...%
-
+label =     %title:0:50:...%
 
 [module/date]
 type = internal/date
 date-margin = 4
-date = %%{F#e60053}羽  %%{F#fff}%I:%M%%{F-} %p   
-#date-alt = %%{F#e60053}羽  %%{F#fff}%A, %d %B %Y | %%{F#fff}%I:%M%%{F#666}:%%{F#e60053}%S %%{F#fff}%p      
-#date = %%{F#e60053}羽  %%{F#fff}%a, %d %b %Y | %%{F#fff}%I:%M%%{F#666}:%%{F#e60053}%S %%{F#fff}%p      
-date-alt = %%{F#e60053}羽  %%{F#fff}%a, %d %b %Y | %%{F#fff}%I:%M:%%{F#e60053}%S %%{F#fff}%p      
+date = %%{F#e60053}﨟  %%{F#fff}%I:%M%%{F-} %p   
+date-alt = %%{F#e60053}﨟  %%{F#fff}%a, %d %b %Y | %%{F#fff}%I:%M:%%{F#e60053}%S %%{F#fff}%p      
 
 
 [module/easteregg-pornhub]
@@ -134,25 +134,26 @@ type = internal/pulseaudio
 expand-right = false
 
 format-volume = <label-volume>
-label-volume =%{F#e60053}墳   %{F#FFFFFF}%percentage%%    
+label-volume =%{F#e60053}墳  %{F#FFFFFF}%percentage%%    
 label-volume-foreground = ${root.foreground}
 
-label-muted =      
+label-muted =      
 label-muted-foreground = #666
 
 
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = "%{F#e60053}ﲭ  "
+format-prefix = "%{F#e60053}ﲭ "
 format-prefix-foreground = ${colors.foreground-alt}
-label = %percentage:2%%   
+label = %percentage:2%%   
 
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = "%{F#e60053}ﱨ   "
+format-prefix = "%{F#e60053}ﭬ   "
+#format-prefix = "%{F#e60053}ﱨ   "
 format-prefix-foreground = ${colors.foreground-alt}
 label = %percentage_used%%   
 
@@ -172,7 +173,7 @@ format-spacing = 1
 
 label-open = ⭘ 
 label-open-foreground = ${colors.secondary}
-label-close = ⭘      cancel
+label-close = ⭘  cancel
 label-close-foreground = ${colors.secondary}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
