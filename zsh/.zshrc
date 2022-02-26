@@ -10,7 +10,6 @@ source $ZSH/oh-my-zsh.sh
 
 # PLUGINS
 plugins=(git, zsh-autosuggestions)
-
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
 
 # POKEMON LOADER
@@ -75,6 +74,7 @@ alias sked='sxiv $HOME/Documents/Personal_Dev/schedule.png'
 alias clock='tty-clock -sct -f "%a, %d %b %Y %T %z"'
 alias pk='pokemon-colorscripts -r 1-4'
 alias rep='cd $HOME/Documents/School_Related/Report-Nov-23'
+alias cmat='cmatrix -C red'
 
 #POWER
 alias denkiwokiru='sudo poweroff'

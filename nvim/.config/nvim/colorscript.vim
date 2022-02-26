@@ -11,20 +11,19 @@ if exists("syntax_on")
 endif
 let g:colors_name = "elflordv2"
 hi Normal		guifg=white		guibg=black
-hi Comment	    term=bold		ctermfg=DarkCyan	guifg=#80a0ff
-hi Constant	    term=underline	ctermfg=Magenta		guifg=Magenta
-hi Special	    term=bold		ctermfg=DarkMagenta	guifg=Red
-hi Identifier   term=underline	cterm=bold			ctermfg=Cyan    guifg=#40ffff
+hi Comment	    term=bold		guifg=#80a0ff
+hi Constant	    term=underline	guifg=Magenta
+hi Special	    term=bold		guifg=#ff5349
+hi Identifier   term=underline	cterm=bold			guifg=#40ffff
 hi Statement    term=bold		ctermfg=Yellow      gui=bold	    guifg=#db1f64
 hi PreProc	    term=underline	ctermfg=LightBlue	guifg=#ff80ff
 hi Type	        term=underline	guifg=#75E6DA       gui=bold
 hi Function	    term=bold		ctermfg=White       guifg=white
 hi Repeat	    term=underline	ctermfg=White		guifg=white
 hi Operator	    guifg=#ff5349
-"ctermfg=Red
 hi Ignore	    ctermfg=black	guifg=bg
 hi Error	    term=reverse    ctermbg=Red         ctermfg=White   guibg=Red   guifg=White
-hi Todo	        term=standout   ctermbg=Yellow      ctermfg=Black   guifg=Blue  guibg=Yellow
+hi Todo	        term=standout   ctermbg=Yellow      ctermfg=Black   guifg=#552583 guibg=#FDB927
 hi VertSplit    guifg=#2b2b2b 
 hi Pmenu 	    guifg=#c6cdd5   guibg=#2b2b2b
 hi PmenuSel 	term=bold       guifg=#c6cdd5       guibg=#333333
@@ -34,6 +33,9 @@ hi SignColumn   guifg=NONE      guibg=Black
 hi ColorColumn  ctermbg=0       guibg=#595959
 hi Folded       guibg=#5e5e5e
 hi ModeMsg		guifg=Magenta
+hi Directory	guifg=#969696
+hi NonText	    guifg=#db1f64
+
 
 
 

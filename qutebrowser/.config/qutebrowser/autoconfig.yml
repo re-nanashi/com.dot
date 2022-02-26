@@ -16,6 +16,8 @@ settings:
       wqa: quit --save
   auto_save.session:
     global: true
+  backend:
+    global: webengine
   bindings.commands:
     global:
       normal:
@@ -41,13 +43,15 @@ settings:
   colors.tabs.bar.bg:
     global: white
   colors.tabs.even.bg:
-    global: '#424242'
+    global: '#323232'
   colors.tabs.indicator.error:
     global: '#00aa00'
+  colors.tabs.indicator.start:
+    global: '#0091aa'
   colors.tabs.indicator.stop:
     global: '#ff2b44'
   colors.tabs.odd.bg:
-    global: '#424242'
+    global: '#323232'
   colors.tabs.selected.even.bg:
     global: black
   colors.tabs.selected.odd.bg:
@@ -67,6 +71,7 @@ settings:
     https://8335.gofenews.com: false
     https://cn.rawscan.net: false
     https://manhwa68.com: false
+    https://meet.google.com: false
     https://ostoday.org: false
     https://pomofocus.io: true
     https://preoffmain.com: false

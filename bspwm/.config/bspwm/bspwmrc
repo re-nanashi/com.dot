@@ -3,26 +3,24 @@
 # STARTUP
 pgrep -x sxhkd > /dev/null || sxhkd &
 picom &
-fcitx &
-xset r rate 250 35 &
-xset s 0 &
-xset -dpms &
-feh --bg-fill --randomize ~/Wallpapers/7.jpg &
+feh --bg-center --randomize ~/Wallpapers/3.jpg &
 ~/.config/polybar/launch.sh
 
 # DESKTOPS
 bspc monitor -d 1 2 3 4 5
 
 # CONFIG
-bspc config border_width	             2
-bspc config window_gap		             4
-bspc config top_padding		             20
-bspc config bottom_padding		         0
-bspc config split_ratio                  0.50
-bspc config active_border_color          '#5d5d5d'
-bspc config normal_border_color          '#000000'
-bspc config focused_border_color         '#5d5d5d'
-bspc config ignore_ewmh_focus            true
+bspc config border_width		        2
+bspc config window_gap		            1
+bspc config top_padding		            21
+bspc config bottom_padding		        0
+bspc config split_ratio                 0.50
+bspc config active_border_color         '#5d5d5d'
+bspc config normal_border_color         '#000000'
+bspc config focused_border_color        '#5d5d5d'
+bspc config single_monocle              true 
+bspc config borderless_monocle          true 
+bspc config ignore_ewmh_focus           true
 
 # RULES
 bspc rule -a "*:*:ffmpeg" desktop=focused state=floating 
@@ -30,11 +28,11 @@ bspc rule -a "Anki:*:Migaku Dictionary" desktop=focused
 bspc rule -a "Anki:*:Migaku Card Exporter" desktop=focused 
 bspc rule -a Anki --one-shot desktop=^5 follow=on
 bspc rule -a Google-chrome --one-shot desktop=^2 
-bspc rule -a discord desktop=^4 state=psuedo_tiled rectangle=900x600+0+0 center=true
-bspc rule -a qBittorrent desktop=^1 
-bspc rule -a qutebrowser --one-shot desktop=^2 
-bspc rule -a Spotify desktop=^1
-bspc rule -a Thunar desktop=^1 focus=on follow=on
-bspc rule -a vlc desktop=^1 focus=on follow=on
+bspc rule -a discord desktop=^4 
+bspc rule -a qBittorrent desktop=^4 
+bspc rule -a qutebrowser --one-shot desktop=^2
+bspc rule -a Spotify desktop=^4
+bspc rule -a Thunar desktop=^4 focus=on follow=on
+bspc rule -a vlc desktop=^4 focus=on follow=on
 bspc rule -a Zathura state=tiled
 bspc rule -a Pentablet state=floating

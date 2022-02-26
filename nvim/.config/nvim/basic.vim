@@ -18,6 +18,11 @@ set guicursor=
 set nocompatible		
 syntax on
 
+"Discord RPC
+let g:presence_buttons = 0
+let g:presence_neovim_image_text = "vim + tmux = coconut oil"
+let g:presence_workspace_text      = "Coding my way out of poverty"
+
 "COLOR THEME
 set termguicolors
 set colorcolumn=85
@@ -37,7 +42,7 @@ let g:cpp_member_variable_highlight = 1
 
 "NERDTree
 let NERDTreeMinimalUI=1
-hi NERDTreeDir guifg=#969696 gui=NONE
+hi NERDTreeDir guifg=#969696 guibg=NONE
 augroup nerdtreehidecwd
 	autocmd!
 	autocmd FileType nerdtree setlocal conceallevel=3 | syntax match NERDTreeDirSlash #/$# containedin=NERDTreeDir conceal contained

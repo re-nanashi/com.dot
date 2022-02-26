@@ -22,6 +22,7 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'Konfekt/FastFold' 
 Plug 'romainl/vim-cool'
 Plug 'ellisonleao/gruvbox.nvim'
+Plug 'andweeb/presence.nvim'
 call plug#end()
 
 source $HOME/.config/nvim/basic.vim
