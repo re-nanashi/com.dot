@@ -13,9 +13,9 @@
 background = #000000
 foreground = #dfdfdf
 foreground-alt = #696969
-icon_bg = #2F2F2F
+icon_bg = #262626
 primary = #ffb52a
-secondary = #e60053
+secondary = #fa3e4b
 alert = #bd2c40
 
 
@@ -49,8 +49,8 @@ modules-left = bspwm
 modules-right = memory cpu pulseaudio date powermenu  
 
 tray-position = right
-tray-padding = 1
-tray-offset-x = -6
+tray-padding = 2
+tray-background = ${colors.icon_bg}
 
 wm-restack = bspwm
 
@@ -100,8 +100,8 @@ label =     %title:0:50:...%
 [module/date]
 type = internal/date
 date-margin = 4
-date = %%{F#e60053}﨟  %%{F#fff}%I:%M%%{F-} %p   
-date-alt = %%{F#e60053}﨟  %%{F#fff}%a, %d %b %Y | %%{F#fff}%I:%M:%%{F#e60053}%S %%{F#fff}%p      
+date = %%{F#fa3e4b}﨟  %%{F#fff}%I:%M%%{F-} %p   
+date-alt = %%{F#fa3e4b}﨟  %%{F#fff}%a, %d %b %Y | %%{F#fff}%I:%M:%%{F#fa3e4b}%S %%{F#fff}%p      
 
 
 [module/easteregg-pornhub]
@@ -130,7 +130,7 @@ type = internal/pulseaudio
 expand-right = false
 
 format-volume = <label-volume>
-label-volume =%{F#e60053}墳  %{F#FFFFFF}%percentage%%    
+label-volume =%{F#fa3e4b}墳  %{F#FFFFFF}%percentage%%    
 label-volume-foreground = ${root.foreground}
 
 label-muted =      
@@ -140,7 +140,7 @@ label-muted-foreground = #666
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = "%{F#e60053} "
+format-prefix = "%{F#fa3e4b} "
 format-prefix-foreground = ${colors.foreground-alt}
 label = %percentage:2%%   
 
@@ -148,7 +148,7 @@ label = %percentage:2%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = "%{F#e60053}ﭫ  "
+format-prefix = "%{F#fa3e4b}ﭫ  "
 format-prefix-foreground = ${colors.foreground-alt}
 label = %percentage_used%%
 

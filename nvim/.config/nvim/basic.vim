@@ -1,8 +1,8 @@
 "BASIC CONFIG
 filetype plugin indent on  
 filetype off	
-set number
-set relativenumber
+"set number
+"set relativenumber
 set nowrap
 set smartcase
 set hlsearch

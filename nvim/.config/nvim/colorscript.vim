@@ -11,7 +11,8 @@ if exists("syntax_on")
 endif
 let g:colors_name = "elflordv2"
 hi Normal		guifg=white		guibg=black
-hi Comment	    term=bold		guifg=#80a0ff
+hi Comment	    term=bold		guifg=#7B838B
+"#6D747C
 hi Constant	    term=underline	guifg=Magenta
 hi Special	    term=bold		guifg=#ff5349
 hi Identifier   term=underline	cterm=bold			guifg=#40ffff

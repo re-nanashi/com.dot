@@ -25,8 +25,8 @@ alias eba='zsh'
 
 #VIM
 export EDITOR='nvim'
-alias vi='nvim'
-alias v='sudo nvim'
+alias v='nvim'
+alias vis='sudo nvim'
 alias vm='nvim $DOT/nvim/.config/nvim/init.vim'
 alias vmdir='cd $DOT/nvim/.config/nvim'
 
