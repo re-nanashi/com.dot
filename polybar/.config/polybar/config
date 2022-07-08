@@ -6,22 +6,25 @@
 ;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
 ;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
 ;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
-;
+; 
 ;==========================================================
 
+
 [colors]
-background = #000000
+background = #101010
 foreground = #dfdfdf
-foreground-alt = #696969
+foreground-alt = #999999
 icon_bg = #262626
 primary = #ffb52a
-secondary = #fa3e4b
+secondary = #404040
 alert = #bd2c40
+red = #fa3e4b
+blood = #db1f64
 
 
 [bar/mybar]
 width = 100%
-height = 22
+height = 19
 radius = 0
 fixed-center = true
 
@@ -34,19 +37,22 @@ line-color = #f00
 border-size = 0
 border-color = #00000000
 
+bottom = false
+
 padding-left = 0
 padding-right = 4
 
-module-margin-left = 0
-module-margin-right = 4
+module-margin-left = 3
+module-margin-right = 3
 
 font-0 = fixed:pixelsize=10;2
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;1
 font-2 = siji:pixelsize=10;1
 font-3 = 3270SemiNarrow Nerd Font Mono:pixelsize=16.5;4
 
-modules-left = bspwm 
-modules-right = memory cpu pulseaudio date powermenu  
+modules-left = bspwm
+modules-center = system-usb-udev
+modules-right = eth memory cpu pulseaudio date powermenu  
 
 tray-position = right
 tray-padding = 2
@@ -77,11 +83,11 @@ ws-icon-4 = 5;
 
 label-focused = "%icon%"
 label-focused-background = ${colors.icon_bg}
-label-focused-foreground = ${colors.secondary}
+label-focused-foreground = ${colors.blood}
 label-focused-padding = 2
 
 label-occupied = "%icon%"
-label-occupied-foreground = ${colors.secondary}
+label-occupied-foreground = ${colors.foreground-alt}
 label-occupied-padding = 2
 
 label-urgent = "%icon%"
@@ -89,19 +95,20 @@ label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
 label-empty = "%icon%"
-label-empty-foreground = ${colors.foreground-alt}
+label-empty-foreground = ${colors.secondary}
 label-empty-padding = 2
 
 [module/xwindow]
 type = internal/xwindow
-label =     %title:0:50:...%
+label =%title:0:220:...%
 
 
 [module/date]
 type = internal/date
 date-margin = 4
-date = %%{F#fa3e4b}﨟  %%{F#fff}%I:%M%%{F-} %p   
-date-alt = %%{F#fa3e4b}﨟  %%{F#fff}%a, %d %b %Y | %%{F#fff}%I:%M:%%{F#fa3e4b}%S %%{F#fff}%p      
+#date = %%{F#fa3e4b}﨟  %%{F#fff}%I:%M%%{F-} %p   
+#date-alt = %%{F#fa3e4b}﨟  %%{F#fff}%a, %d %b %Y | %%{F#fff}%I:%M:%%{F#fa3e4b}%S %%{F#fff}%p      
+date = %%{F#808080}﨟  %%{F#fff}%a, %d %b %Y    %%{F#808080}  %%{F#fff}%I:%M %%{F#fff}%p      
 
 
 [module/easteregg-pornhub]
@@ -130,17 +137,18 @@ type = internal/pulseaudio
 expand-right = false
 
 format-volume = <label-volume>
-label-volume =%{F#fa3e4b}墳  %{F#FFFFFF}%percentage%%    
+label-volume =%{F#808080}墳  %{F#FFFFFF}%percentage%%    
 label-volume-foreground = ${root.foreground}
 
 label-muted =      
 label-muted-foreground = #666
 
 
+
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = "%{F#fa3e4b} "
+format-prefix = "%{F#808080} "
 format-prefix-foreground = ${colors.foreground-alt}
 label = %percentage:2%%   
 
@@ -148,7 +156,7 @@ label = %percentage:2%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = "%{F#fa3e4b}ﭫ  "
+format-prefix = "%{F#808080}ﭫ  "
 format-prefix-foreground = ${colors.foreground-alt}
 label = %percentage_used%%
 
@@ -167,9 +175,9 @@ expand-right = true
 format-spacing = 1
 
 label-open = ⭘ 
-label-open-foreground = ${colors.secondary}
+label-open-foreground = ${colors.blood}
 label-close = ⭘  cancel
-label-close-foreground = ${colors.secondary}
+label-close-foreground = ${colors.blood}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
@@ -198,6 +206,29 @@ pseudo-transparency = true
 margin-top = 0
 margin-bottom = -10
 
+[network-base]
+type = internal/network
+interval = 5
+format-connected = <label-connected>
+format-disconnected = <label-disconnected>
+label-disconnected = %{F#F0C674}%ifname%%{F#707880} disconnected
+
+[module/eth]
+inherit = network-base
+interface-type = wired
+label-connected = %{F#808080}%ifname%%{F-} %local_ip%
+
+[module/sep1]
+type = custom/text
+content = [
+content-foreground = ${colors.foreground-alt}
+content-padding = 1
+
+[module/sep2]
+type = custom/text
+content = ]
+content-foreground = ${colors.foreground-alt}
+content-padding = 1
 
 [module/earthquake]
 include-file = ~/.config/polybar/scripts/earthquake/module.conf

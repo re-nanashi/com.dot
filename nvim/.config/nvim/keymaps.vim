@@ -2,7 +2,10 @@
 nnoremap <Space> <Nop>
 vnoremap <Space> <Nop>
 let mapleader = " "
-let maplocalleader = "\\"
+let maplocalleader = "//"
+
+"DELETE FORWARD
+inoremap <C-d> <Del>
 
 "EASIER ESC + EASIER NAVIGATION OF WINDOWS
 let g:easyescape_chars = {"j": 2}

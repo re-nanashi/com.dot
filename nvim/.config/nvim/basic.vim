@@ -1,8 +1,6 @@
 "BASIC CONFIG
 filetype plugin indent on  
 filetype off	
-"set number
-"set relativenumber
 set nowrap
 set smartcase
 set hlsearch
@@ -14,21 +12,39 @@ set expandtab
 set smartindent
 set clipboard+=unnamedplus
 set lazyredraw
+set synmaxcol=200
+set ttyfast
 set guicursor=
 set nocompatible		
+set nocursorline
+set regexpengine=1
+"set number
+"set relativenumber
 syntax on
+
+"C
+autocmd Filetype c setlocal expandtab tabstop=8 shiftwidth=8 softtabstop=8
+
+""Change colorscheme per file
+":autocmd BufEnter,FileType *
+"\   if &ft ==# 'c' || &ft ==# 'cpp' | | 
+"\   elseif &ft ==# 'hdl' || &ft ==# 'vhdl'| colorscheme retrohack | syntax off |
+"\   else | colorscheme ghdark | syntax off
+"\   endif
+
+"Position cursor at start of tab
+set listchars=tab:\ \  list
 
 "Discord RPC
 let g:presence_buttons = 0
 let g:presence_neovim_image_text = "vim + tmux = coconut oil"
-let g:presence_workspace_text      = "Coding my way out of poverty"
+let g:presence_workspace_text      = "16_bit_hack_asm_"
 
 "COLOR THEME
 set termguicolors
-set colorcolumn=85
-"highlight ColorColumn ctermbg=0 guibg=lightgrey 
+set colorcolumn=90
 
-"colorscheme gruvbox
+"colorscheme retrohack
 "set background=dark 
 
 "TRANSPARENCY CONFIG

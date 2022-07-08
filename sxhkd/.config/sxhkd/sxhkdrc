@@ -9,8 +9,12 @@ super + d
 	rofi -show drun
 
 # chrome launcher
-super + f 
-	qutebrowser
+super + c
+	google-chrome-stable
+
+# discord launcher
+super + f
+	discord
 
 # screenshot
 super + F2
@@ -76,7 +80,7 @@ super + {_,shift + }g
 
 # set the window state
 super + {t,shift + t,s,r}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+	bspc node -t {tiled,pseudo_tiled,floating,\~fullscreen}
 
 # set the node flags
 super + ctrl + {m,y,z}

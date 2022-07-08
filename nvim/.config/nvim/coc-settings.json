@@ -11,7 +11,9 @@
       }
   }
 },
-"clangd.enabled": true,
-"coc.preferences.formatOnSaveFiletypes": ["cpp"],
-"codeLens.enable": true
+
+"clangd.enabled": false,
+"codeLens.enable": true,
+"codeLens.position": "eol",
+"coc.preferences.formatOnSaveFiletypes": ["c", "ino"]
 }

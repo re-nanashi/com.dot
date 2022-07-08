@@ -21,8 +21,8 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'Konfekt/FastFold' 
 Plug 'romainl/vim-cool'
-Plug 'ellisonleao/gruvbox.nvim'
 Plug 'andweeb/presence.nvim'
+Plug 'yasukotelin/retrohack'
 call plug#end()
 
 source $HOME/.config/nvim/basic.vim
@@ -32,4 +32,4 @@ source $HOME/.config/nvim/vimspector.vim
 source $HOME/.config/nvim/terminal_theme.vim
 source $HOME/.config/nvim/telescope.vim
 source $HOME/.config/nvim/status.vim
-source $HOME/.config/nvim/colorscript.vim
+source $HOME/.config/nvim/colors/elflordd.vim

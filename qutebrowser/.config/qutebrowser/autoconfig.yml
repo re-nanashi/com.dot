@@ -61,6 +61,7 @@ settings:
   content.geolocation:
     https://www.coursef.com: false
   content.media.audio_capture:
+    https://meet.google.com: true
     https://online-voice-recorder.com: true
     https://www.kumospace.com: true
   content.media.audio_video_capture:

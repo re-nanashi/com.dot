@@ -3,3 +3,4 @@
 	name = re-nanashi
 [init]
 	defaultBranch = main
+[url "ssh://git@github.com"]
