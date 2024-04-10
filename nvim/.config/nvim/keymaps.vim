@@ -3,14 +3,14 @@ nnoremap <Space> <Nop>
 vnoremap <Space> <Nop>
 let mapleader = " "
 let maplocalleader = "//"
-
 "DELETE FORWARD
 inoremap <C-d> <Del>
 
 "EASIER ESC + EASIER NAVIGATION OF WINDOWS
-let g:easyescape_chars = {"j": 2}
-let g:easyescape_timeout = 300
-inoremap jj <Esc>
+"let g:easyescape_chars = {"j": 2}
+"let g:easyescape_timeout = 30
+"inoremap jj <ESC>
+"inoremap jj <Esc>
 imap <C-c> <Esc>
 
 "EASIER WINDOW NAVIGATION
@@ -38,6 +38,7 @@ nnoremap <leader>Y "+y$
 "paste last thing yanked, not deleted
 nmap ,p "0p
 nmap ,P "0P
+
 
 "TERMINAL
 nnoremap <leader>t :CocCommand terminal.Toggle<CR>
@@ -88,3 +89,4 @@ augroup vimbettersml
   " Uncomment to try out same-width conceal characters
   "let g:sml_greek_tyvar_show_tick = 1
 augroup END
+

@@ -26,7 +26,7 @@ function! Mode()
 endfunc                                                                                                                                                                                                
 
 hi link User1 Statusline                                                                                                                                                                               
-hi Statusline cterm=NONE                                                                                                                                                                               
+"hi Statusline cterm=NONE                                                                                                                                                                               
 hi User1 guibg=NONE ctermfg=28  ctermbg=22  cterm=bold
 
 function! StatusDiagnostic() abort

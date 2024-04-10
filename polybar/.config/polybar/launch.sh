@@ -6,6 +6,7 @@ killall -q polybar
 # polybar-msg cmd quit
 
 # Launch Polybar, using default config location ~/.config/polybar/config
-polybar mybar 2>&1 | tee -a /tmp/polybar.log & disown
+MONITOR=DP-4 polybar --reload mybar &
+MONITOR=HDMI-0 polybar --reload secondary &
 
-echo "Polybar launched..."
+echo "Polybar launched..." 

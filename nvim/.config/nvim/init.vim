@@ -1,28 +1,21 @@
 call plug#begin('~/.config/nvim/plugged')
-Plug 'tpope/vim-fugitive'
-Plug 'cohama/lexima.vim'
 Plug 'preservim/nerdtree'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'neoclide/coc.nvim', {'do':{ -> coc#util#install() }, 'branch' : 'release' }
-Plug 'wojciechkepka/vim-github-dark'
-Plug 'cdelledonne/vim-cmake'
-Plug 'antoinemadec/FixCursorHold.nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'puremourning/vimspector'
 Plug 'szw/vim-maximizer'
-Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'zhou13/vim-easyescape'
-Plug 'wlangstroth/vim-racket'
-Plug 'Olical/conjure', {'tag': 'v4.23.0'}
-Plug 'ThePrimeagen/vim-be-good'
-Plug 'jez/vim-better-sml'
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'tomasiser/vim-code-dark'
 Plug 'ryanoasis/vim-devicons'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'Konfekt/FastFold' 
-Plug 'romainl/vim-cool'
-Plug 'andweeb/presence.nvim'
-Plug 'yasukotelin/retrohack'
+Plug 'romainl/vim-cool' 
+Plug 'neovim/nvim-lspconfig'
+Plug 'ThePrimeagen/harpoon'
+Plug 'Yggdroot/indentLine'
+Plug 'morhetz/gruvbox'
+Plug 'windwp/nvim-autopairs'
 call plug#end()
 
 source $HOME/.config/nvim/basic.vim
@@ -32,4 +25,10 @@ source $HOME/.config/nvim/vimspector.vim
 source $HOME/.config/nvim/terminal_theme.vim
 source $HOME/.config/nvim/telescope.vim
 source $HOME/.config/nvim/status.vim
-source $HOME/.config/nvim/colors/elflordd.vim
+
+lua require('filenav')
+lua << EOF
+require'lspconfig'.pyright.setup{}
+require("nvim-autopairs").setup {}
+EOF
+

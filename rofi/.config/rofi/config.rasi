@@ -1,0 +1,19 @@
+/** Basic config file **/
+
+configuration {
+  modi:               "window,run,drun,ssh,windowcd";
+  show-icons:         false;
+  icon-theme:         "Papirus";
+  font:               "Roboto Mono 10";
+  display-ssh:        "";
+  display-run:        ">";
+  display-drun:       "[ コマンド ]";
+  display-window:     "";
+  display-combi:      "";
+  show-match:         false;
+}
+
+@theme "./theme2.rasi"
+//@theme "./theme3.rasi"
+
+//@theme "/usr/share/rofi/themes/gruvbox-dark-hard.rasi"

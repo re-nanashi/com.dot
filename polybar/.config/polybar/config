@@ -9,20 +9,31 @@
 ; 
 ;==========================================================
 
-
 [colors]
+#Dark translucent 
+#background = #99101010 
+
+forest = #22816b
+
+#Dark
 background = #101010
+#background = #363636
+
+#White translucent
+#background = #993d3d3d
+
+black = #101010
 foreground = #dfdfdf
 foreground-alt = #999999
 icon_bg = #262626
+i3wm = #5d5d5d
 primary = #ffb52a
 secondary = #404040
 alert = #bd2c40
 red = #fa3e4b
 blood = #db1f64
 
-
-[bar/mybar]
+[section/base]
 width = 100%
 height = 19
 radius = 0
@@ -37,7 +48,7 @@ line-color = #f00
 border-size = 0
 border-color = #00000000
 
-bottom = false
+bottom = true
 
 padding-left = 0
 padding-right = 4
@@ -48,46 +59,87 @@ module-margin-right = 3
 font-0 = fixed:pixelsize=10;2
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;1
 font-2 = siji:pixelsize=10;1
-font-3 = 3270SemiNarrow Nerd Font Mono:pixelsize=16.5;4
+font-3 = 3270SemiNarrow Nerd Font Mono:pixelsize=16;3
+font-4 = Noto Sans CJK JP:size=9:style=Regular;3
+font-5 = 3270SemiNarrow Nerd Font:pixelsize=16.5;4
 
-modules-left = bspwm
-modules-center = system-usb-udev
-modules-right = eth memory cpu pulseaudio date powermenu  
 
-tray-position = right
-tray-padding = 2
-tray-background = ${colors.icon_bg}
-
-wm-restack = bspwm
+wm-restack = i3wm
 
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+################################ MAIN BAR ###############################
+[bar/mybar]
+monitor = DP-4
+inherit = section/base
+modules-left = i3 
+modules-center = nothing
+modules-right = eth memory cpu pulseaudio date powermenu
+
+tray-position = right
+tray-padding = 2
+tray-background = ${colors.black}
+#tray-background = ${colors.background}
+#########################################################################
+
+################################ 2nd BAR ###############################
+[bar/secondary]
+monitor = HDMI-0
+inherit = section/base
+modules-left = bspwm
+modules-right = eth memory cpu pulseaudio date powermenu  
+#########################################################################
 
 [module/logo]
 type = custom/text
 content-padding = 1
 content = "    "
 
+[module/nothing]
+type = custom/text
 
-[module/bspwm]
-type = internal/bspwm
+[module/i3]
+type = internal/i3
+strip-wsnumbers = true
+#format-background = ${colors.blood}
+
+#ws-icon-0 = 1;ﲵ main
+#ws-icon-1 = 2; www 
+#ws-icon-2 = 3;﬏ dev
+#ws-icon-3 = 4; misc
+#ws-icon-4 = 5; docs
+#ws-icon-5 = 6;ﭮ discord
+#ws-icon-6 = 7;ﲵ
+#ws-icon-7 = 8;ﲵ
+#ws-icon-8 = 9;ﲵ
 
 ws-icon-0 = 1;ﲵ
-ws-icon-1 = 2; 
+ws-icon-1 = 2;  
 ws-icon-2 = 3;﬏ 
 ws-icon-3 = 4;
 ws-icon-4 = 5;
-#ws-icon-5 = 6;ﭮ
+ws-icon-5 = 6;ﭮ
+ws-icon-6 = 7;ﲵ
+ws-icon-7 = 8;ﲵ
+ws-icon-8 = 9;ﲵ
 
+#label-focused-background = ${colors.icon_bg}
+#label-focused-foreground = ${colors.blood}
 
 label-focused = "%icon%"
-label-focused-background = ${colors.icon_bg}
-label-focused-foreground = ${colors.blood}
+label-focused-background = #5d5d5d
+label-focused-foreground = #000000
 label-focused-padding = 2
+
+label-unfocused = "%icon%"
+label-unfocused-background = ${colors.background}
+label-unfocused-foreground = ${colors.foreground-alt} 
+label-unfocused-padding = 2
 
 label-occupied = "%icon%"
 label-occupied-foreground = ${colors.foreground-alt}
+label-occupied-background = ${colors.black}
 label-occupied-padding = 2
 
 label-urgent = "%icon%"
@@ -96,11 +148,14 @@ label-urgent-padding = 2
 
 label-empty = "%icon%"
 label-empty-foreground = ${colors.secondary}
+label-empty-background = ${colors.black}
 label-empty-padding = 2
 
 [module/xwindow]
 type = internal/xwindow
 label =%title:0:220:...%
+format-background = #db1f64
+format-padding = 186
 
 
 [module/date]
@@ -108,7 +163,9 @@ type = internal/date
 date-margin = 4
 #date = %%{F#fa3e4b}﨟  %%{F#fff}%I:%M%%{F-} %p   
 #date-alt = %%{F#fa3e4b}﨟  %%{F#fff}%a, %d %b %Y | %%{F#fff}%I:%M:%%{F#fa3e4b}%S %%{F#fff}%p      
+#date = %%{F#212121}﨟  %%{F#fff}%a, %d %b %Y    %%{F#212121}  %%{F#fff}%I:%M %%{F#fff}%p      
 date = %%{F#808080}﨟  %%{F#fff}%a, %d %b %Y    %%{F#808080}  %%{F#fff}%I:%M %%{F#fff}%p      
+#date = %%{F#22816b}﨟  %%{F#fff}%a, %d %b %Y    %%{F#22816b}  %%{F#fff}%I:%M %%{F#fff}%p      
 
 
 [module/easteregg-pornhub]
@@ -138,10 +195,13 @@ expand-right = false
 
 format-volume = <label-volume>
 label-volume =%{F#808080}墳  %{F#FFFFFF}%percentage%%    
+#label-volume =%{F#212121}墳  %{F#FFFFFF}%percentage%%    
+#label-volume =%{F#22816b}墳  %{F#FFFFFF}%percentage%%    
 label-volume-foreground = ${root.foreground}
 
 label-muted =      
-label-muted-foreground = #666
+#label-muted-foreground = #666
+label-muted-foreground = ${colors.blood}
 
 
 
@@ -149,6 +209,8 @@ label-muted-foreground = #666
 type = internal/cpu
 interval = 2
 format-prefix = "%{F#808080} "
+#format-prefix = "%{F#212121} "
+#format-prefix = "%{F#22816b} "
 format-prefix-foreground = ${colors.foreground-alt}
 label = %percentage:2%%   
 
@@ -157,6 +219,8 @@ label = %percentage:2%%
 type = internal/memory
 interval = 2
 format-prefix = "%{F#808080}ﭫ  "
+#format-prefix = "%{F#212121}ﭫ  "
+#format-prefix = "%{F#22816b}ﭫ  "
 format-prefix-foreground = ${colors.foreground-alt}
 label = %percentage_used%%
 
@@ -168,6 +232,10 @@ tail = true
 click-left = /home/re-nanashi/.config/polybar/scripts/system-usb-udev.sh --mount &
 click-right = /home/re-nanashi/.config/polybar/scripts/system-usb-udev.sh --unmount &
 
+[module/system-cpu-temppercore]
+type = custom/script
+exec = /home/re-nanashi/.config/polybar/scripts/system-cpu-temppercore.sh
+interval = 60
 
 [module/powermenu]
 type = custom/menu
@@ -216,7 +284,8 @@ label-disconnected = %{F#F0C674}%ifname%%{F#707880} disconnected
 [module/eth]
 inherit = network-base
 interface-type = wired
-label-connected = %{F#808080}%ifname%%{F-} %local_ip%
+#label-connected = %{F#808080}%ifname%%{F-} %local_ip%
+label-connected = %{F#db1f64}インターネット%{F-} %local_ip%
 
 [module/sep1]
 type = custom/text
