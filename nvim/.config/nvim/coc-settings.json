@@ -1,22 +1,38 @@
 {
-  "languageserver": {
-    "ccls": {
-      "command": "ccls",
-      "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
-      "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
-      "initializationOptions": {
-        "cache": {
-          "directory": "/tmp/ccls"
+    "languageserver": {
+        "ccls": {
+            "command": "ccls",
+            "filetypes": [
+                "c",
+                "cc",
+                "cpp",
+                "c++",
+                "objc",
+                "objcpp"
+            ],
+            "rootPatterns": [
+                ".ccls",
+                "compile_commands.json",
+                ".git/",
+                ".hg/"
+            ],
+            "initializationOptions": {
+                "cache": {
+                    "directory": "/tmp/ccls"
+                }
+            }
         }
-      }
-    }
-  },
-  "clangd.enabled": true,
-  "codeLens.enable": false,
-  "codeLens.position": "eol",
-  "coc.preferences.formatOnSave": true,
-  "prettier.disableLanguages": ["c", "cpp", "java"],
-  "suggest.noselect": true,
-  "semanticTokens.enable": true,
-  "java.import.gradle.java.home": "/usr/lib/jvm/java-17-openjdk"
+    },
+    "clangd.enabled": true,
+    "codeLens.enable": false,
+    "codeLens.position": "eol",
+    "inlayHint.enable": false,
+    "coc.preferences.formatOnSave": true,
+    "prettier.disableLanguages": [
+        "c",
+        "cpp",
+        "java"
+    ],
+    "suggest.noselect": true,
+    "semanticTokens.enable": true
 }

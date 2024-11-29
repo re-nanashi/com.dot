@@ -17,15 +17,18 @@ set ttyfast
 set nocompatible		
 set nocursorline
 set regexpengine=1
+set nu
 syntax on
 set re=0
 set mouse=""
+set signcolumn=number
+
+let g:indentLine_enabled = 0
 
 "Treesitter Syntax Highlight
 lua << EOF
 require'nvim-treesitter.configs'.setup {
-  highlight = { enable = true },
-  
+    highlight = { enable = true, },
 }
 EOF
 
@@ -53,7 +56,6 @@ function! SetTheme(colorscheme)
         execute 'colorscheme ' . a:colorscheme
         "set rnu
         set nu
-        set signcolumn=yes
         "set guicursor=n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20
         set guicursor=
     catch
@@ -66,7 +68,9 @@ endfunction
 function! CTheme(colorscheme)
     try 
         execute 'colorscheme ' . a:colorscheme
-        set signcolumn=yes
+        "set rnu
+        set nu
+
     catch
         echohl ErrorMsg
         echomsg 'Error setting theme for C'
@@ -81,7 +85,8 @@ let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_sign_column = 'bg0'
 autocmd FileType python call SetTheme('industryv2')
 
-autocmd FileType c call CTheme('industryv2')
+autocmd FileType c call CTheme('lunaperchev2')
+"autocmd FileType c call CTheme('industryv2')
 
 "let current_hour = strftime("%H", localtime())
 "if current_hour >= 18 || current_hour < 5
@@ -90,7 +95,8 @@ autocmd FileType c call CTheme('industryv2')
 "  "source $HOME/.config/nvim/colors/realquiet.vim
 "  colorscheme industry
 "endif
-source $HOME/.config/nvim/colors/industryv2.vim
+"source $HOME/.config/nvim/colors/industryv2.vim
+source $HOME/.config/nvim/colors/lunaperchev2.vim
 
 "MISC
 "-------------------------------------------------------------------------------------------------------------------------------------

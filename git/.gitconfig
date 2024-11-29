@@ -4,3 +4,5 @@
 [init]
 	defaultBranch = main
 [url "ssh://git@github.com"]
+[pull]
+	rebase = true

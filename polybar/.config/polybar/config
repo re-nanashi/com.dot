@@ -16,11 +16,11 @@
 forest = #22816b
 
 #Dark
-background = #101010
+#background = #101010
 #background = #363636
 
 #White translucent
-#background = #993d3d3d
+background = #993d3d3d
 
 black = #101010
 foreground = #dfdfdf
@@ -48,7 +48,7 @@ line-color = #f00
 border-size = 0
 border-color = #00000000
 
-bottom = true
+bottom = false
 
 padding-left = 0
 padding-right = 4
@@ -87,7 +87,7 @@ tray-background = ${colors.black}
 [bar/secondary]
 monitor = HDMI-0
 inherit = section/base
-modules-left = bspwm
+modules-left = i3
 modules-right = eth memory cpu pulseaudio date powermenu  
 #########################################################################
 
@@ -101,8 +101,8 @@ type = custom/text
 
 [module/i3]
 type = internal/i3
+pin-workspaces = true
 strip-wsnumbers = true
-#format-background = ${colors.blood}
 
 #ws-icon-0 = 1;ﲵ main
 #ws-icon-1 = 2; www 
@@ -123,6 +123,12 @@ ws-icon-5 = 6;ﭮ
 ws-icon-6 = 7;ﲵ
 ws-icon-7 = 8;ﲵ
 ws-icon-8 = 9;ﲵ
+ws-icon-9 = 10;ﲵ
+
+ws-icon-10 = 11;ﲵ
+ws-icon-11 = 12;  
+ws-icon-12 = 13;﬏ 
+ws-icon-13 = 14;
 
 #label-focused-background = ${colors.icon_bg}
 #label-focused-foreground = ${colors.blood}

@@ -126,6 +126,7 @@ if &background ==# 'dark'
   hi Statusline guifg=#c6c6c6 guibg=#000000 gui=bold,reverse cterm=bold,reverse
   hi StatuslineNC guifg=#767676 guibg=#000000 gui=reverse cterm=reverse
   hi VertSplit guifg=#333333 guibg=#333333 gui=NONE cterm=NONE
+  hi WinSeparator guifg=#333333 guibg=#333333
   hi TabLine guifg=#000000 guibg=#c6c6c6 gui=NONE cterm=NONE
   hi TabLineFill guifg=NONE guibg=#767676 gui=NONE cterm=NONE
   hi TabLineSel guifg=#ffffff guibg=#000000 gui=bold cterm=bold

@@ -1,6 +1,6 @@
 # PATH
 # Path to oh-my-zsh installation.
-export PATH=$PATH:$HOME/.local/bin:/home/.npm-global/bin/:$HOME/.local/share/gem/ruby/3.0.0/bin:/usr/lib/jvm/default/bin/:$HOME/.npm-global/bin
+export PATH=$PATH:$HOME/.local/bin:/home/.npm-global/bin/:$HOME/.local/share/gem/ruby/3.0.0/bin:/usr/lib/jvm/default/bin/:$HOME/.npm-global/bin/:$HOME/go/bin
 export _JAVA_AWT_WM_NONREPARENTING=1
 export JAVA_HOME=/usr/lib/jvm/default/
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig/
@@ -57,7 +57,7 @@ alias tconf='nvim $DOT/tmux/.tmux.conf'
 
 #PROGRAMMING
 alias main='nvim $HOME/documents/Code_Files/Learn_CPP_Material/main.txt'
-alias notes='nvim $HOME/documents/Projects/zex/.notes'
+alias notes='nvim $HOME/documents/Misc/.notes'
 alias cm='google-chrome-stable $HOME/documents/Code_Files/cpp/materials/learn7.pdf'
 alias mkc='make clean'
 #alias learn='cd $HOME/documents/Code_Files/cpp/learning_cpp/learn_c'
@@ -97,6 +97,7 @@ alias usb='cd /mnt/usb/'
 alias kt='vi /home/re-nanashi/takeaways'
 alias emp='sudoedit /home/.emp'
 alias k='~/.config/configure_keyboard.sh'
+alias nc='ncdu' # disk space
 
 #MISC
 alias tsk='bpytop'
@@ -109,6 +110,7 @@ alias cmat='cmatrix -C red'
 alias jdebug='java -Xdebug -Xrunjdwp:server=y,transport=dt_socket,address=5005,suspend=y'
 alias nf='neofetch --source ~/.config/neofetch/logo'
 alias bt='bluetoothctl'
+alias tr="sudo ntpdate -u ptbtime1.ptb.de"
 #POWER
 alias denkiwokiru='sudo poweroff'
 
@@ -130,3 +132,18 @@ export NNN_FCOLORS='c1e1f931006033f7c6d6abc4'
 #
 ### Generated for envman. Do not edit.
 #[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/usr/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/usr/etc/profile.d/conda.sh" ]; then
+        . "/usr/etc/profile.d/conda.sh"
+    else
+        export PATH="/usr/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<

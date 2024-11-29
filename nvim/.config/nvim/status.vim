@@ -27,7 +27,7 @@ endfunc
 
 hi link User1 Statusline                                                                                                                                                                               
 "hi Statusline cterm=NONE                                                                                                                                                                               
-hi User1 guibg=NONE ctermfg=28  ctermbg=22  cterm=bold
+hi User1 guibg=NONE 
 
 function! StatusDiagnostic() abort
     let info = get(b:, 'coc_diagnostic_info', {})

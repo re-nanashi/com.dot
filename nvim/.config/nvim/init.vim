@@ -16,6 +16,8 @@ Plug 'ThePrimeagen/harpoon'
 Plug 'Yggdroot/indentLine'
 Plug 'morhetz/gruvbox'
 Plug 'windwp/nvim-autopairs'
+Plug 'mfussenegger/nvim-jdtls'
+Plug 'iamcco/markdown-preview.nvim', { 'do':  'cd app && npx --yes yarn install' }
 call plug#end()
 
 source $HOME/.config/nvim/basic.vim
@@ -31,4 +33,3 @@ lua << EOF
 require'lspconfig'.pyright.setup{}
 require("nvim-autopairs").setup {}
 EOF
-
